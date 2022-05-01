@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "records",
+  "info": {
+    "singularName": "record",
+    "pluralName": "records",
+    "displayName": "Record",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "entry_time": {
+      "type": "datetime",
+      "unique": true,
+      "required": false
+    },
+    "date": {
+      "type": "date",
+      "unique": true
+    },
+    "departure_time": {
+      "type": "datetime",
+      "unique": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "record"
+    },
+    "manual": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
